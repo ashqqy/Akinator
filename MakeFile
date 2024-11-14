@@ -3,7 +3,7 @@ FLAGS = -Wshadow -Winit-self -Wredundant-decls -Wcast-align -Wundef -Wfloat-equa
 all: built run
 
 built:
-	g++ -I./include ./src/*.cpp -o main ${FLAGS}
+	g++ -I./include -I./Common ./src/*.cpp ./Common/Common.cpp -o main ${FLAGS}
 
 run:
 	./main

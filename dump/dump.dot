@@ -1,0 +1,11 @@
+digraph G
+{
+node[shape="record", style="rounded, filled"];
+
+p0x0x562f76e97490[label = "{ <p>ptr = 0x0x562f76e97490 | <d>data = Впамперсе| { <l>left|<r>right } }"];
+p0x0x562f76e97cd0[label = "{ <p>ptr = 0x0x562f76e97cd0| <d>data = Впамперсе| { <l>left|<r>right } }"];
+p0x0x562f76e97cf0[label = "{ <p>ptr = 0x0x562f76e97cf0| <d>data = Ваш воображаемый друг| { <l>left|<r>right } }"];
+
+p0x0x562f76e97490:<l> -> p0x0x562f76e97cd0
+p0x0x562f76e97490:<r> -> p0x0x562f76e97cf0
+}
