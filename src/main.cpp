@@ -15,12 +15,13 @@ int main ()
     // если есть база данных, то читаем оттуда
     if (database != NULL && FileSizeFinder (database) > 10)
     {
-    ;
+        ReadDataBase (database, &tree);
+        TreeDump (&tree);
     }
     // иначе создаём первый лист
     else    
     {
-        CreateAndLinkNode (&tree, "Ваш воображаемый друг", &tree.root_node);
+        CreateAndLinkNode (&tree, "Ваш воображаемый друг", NULL, &tree.root_node);
     }
 
     while (1)
@@ -36,12 +37,13 @@ int main ()
         else if (mode == DATABASESHOW_MODE)
             DatabaseShowMode ();
         else if (mode == EXITNOSAVING_MODE)
-            ExitNoSavingMode ();
+            break;
         else if (mode == EXITSAVING_MODE) 
+        {
             ExitSavingMode ();
+            break;
+        }
     }
-
-    TreeDump (&tree);
 
     return 0;
 }

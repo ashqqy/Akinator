@@ -2,10 +2,14 @@ digraph G
 {
 node[shape="record", style="rounded, filled"];
 
-p0x0x562f76e97490[label = "{ <p>ptr = 0x0x562f76e97490 | <d>data = Впамперсе| { <l>left|<r>right } }"];
-p0x0x562f76e97cd0[label = "{ <p>ptr = 0x0x562f76e97cd0| <d>data = Впамперсе| { <l>left|<r>right } }"];
-p0x0x562f76e97cf0[label = "{ <p>ptr = 0x0x562f76e97cf0| <d>data = Ваш воображаемый друг| { <l>left|<r>right } }"];
+p0x55dba05ff930[label = "{ <par>parent = (nil) | <ptr>ptr = 0x55dba05ff930 | <d>�]| { <l>left|<r>right } }"];
+p0x55dba05ff960[label = "{ <par>parent = 0x55dba05ff930 | <ptr>ptr = 0x55dba05ff960 | <d>имеет хвост| { <l>left|<r>right } }"];
+p0x55dba05ff990[label = "{ <par>parent = 0x55dba05ff960 | <ptr>ptr = 0x55dba05ff990 | <d>слон| { <l>left|<r>right } }"];
+p0x55dba05ff9c0[label = "{ <par>parent = 0x55dba05ff960 | <ptr>ptr = 0x55dba05ff9c0 | <d>не слон| { <l>left|<r>right } }"];
+p0x55dba05ff9f0[label = "{ <par>parent = 0x55dba05ff930 | <ptr>ptr = 0x55dba05ff9f0 | <d>неизвестно кто| { <l>left|<r>right } }"];
 
-p0x0x562f76e97490:<l> -> p0x0x562f76e97cd0
-p0x0x562f76e97490:<r> -> p0x0x562f76e97cf0
+p0x55dba05ff930:<l> -> p0x55dba05ff960
+p0x55dba05ff960:<l> -> p0x55dba05ff990
+p0x55dba05ff960:<r> -> p0x55dba05ff9c0
+p0x55dba05ff930:<r> -> p0x55dba05ff9f0
 }

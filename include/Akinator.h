@@ -7,7 +7,8 @@ typedef const char* tree_elem_t;
 
 struct tree_node_t
 {
-    tree_elem_t data;
+    tree_node_t* parent;
+    tree_elem_t  data;
     tree_node_t* left;
     tree_node_t* right;
 };
@@ -22,7 +23,11 @@ enum tree_error_t
 {
     CHIKI_PUKI = 1,
 
-    ALLOCATION_ERROR = 2
+    ALLOCATION_ERROR = 2,
+    EMPTY_DATABASE = 3,
+    INVALID_DATABASE_FORMAT = 4,
+    BUFFER_OVERFLOW = 5
+
 };
 
 enum MODE
@@ -38,10 +43,13 @@ enum MODE
 
 tree_error_t TreeInit (tree_t* tree);
 
-tree_error_t CreateAndLinkNode (tree_t* tree, tree_elem_t data, tree_node_t** node_to_link_to);
+tree_error_t CreateAndLinkNode (tree_t* tree, tree_elem_t data, tree_node_t* parent_node, tree_node_t** node_to_link_to);
 tree_node_t* CreateNode (tree_t* tree, tree_elem_t data);
-tree_error_t LinkNode (tree_node_t* node, tree_node_t** node_to_link_to);
+tree_error_t LinkNode (tree_node_t* node, tree_node_t* parent_node, tree_node_t** node_to_link_to);
 tree_error_t EditNodeData (tree_node_t* node, tree_elem_t new_data);
+
+tree_error_t ReadDataBase (FILE* database, tree_t* tree);
+tree_error_t CreateNodeFromDatabase (tree_t* tree, char* shift, tree_node_t* parent_node, tree_node_t** node);
 
 MODE StartMenuMode ();
 void GuessingMode (tree_t* tree);
