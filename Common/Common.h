@@ -3,15 +3,29 @@
 
 #include <stdio.h>
 
+typedef const char* tree_elem_t;
+
+struct tree_node_t
+{
+    tree_node_t* parent;
+    tree_elem_t  data;
+    tree_node_t* left;
+    tree_node_t* right;
+};
+
+typedef tree_node_t* stack_elem_t;
+
+struct stack_t
+    {
+    ssize_t size;
+    ssize_t capacity;
+    stack_elem_t* data;
+    };
+
 //----------------------------------------------------------------
 
-const int POISON = 0;
-
-void* MyCalloc (size_t n_elems, size_t size_elems, const void* poison);
-void* MyRecalloc (void* memory, size_t n_elements, size_t size_elements, size_t previous_n_elements, const void* poison);
 size_t FileSizeFinder (FILE* file_input);
-void CleanBufer ();
-char* ScanfAndAllocateBuffer ();
+void CleanBuffer ();
 
 //----------------------------------------------------------------
 

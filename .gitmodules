@@ -1,0 +1,7 @@
+[submodule "Custom-warning"]
+	path = Custom-warning
+	url = https://github.com/ashqqy/Custom-warning
+[submodule "Stack"]
+	path = Stack
+	url = https://github.com/ashqqy/Stack
+	branch = Akinator

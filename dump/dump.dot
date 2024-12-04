@@ -2,14 +2,14 @@ digraph G
 {
 node[shape="record", style="rounded, filled"];
 
-p0x55dba05ff930[label = "{ <par>parent = (nil) | <ptr>ptr = 0x55dba05ff930 | <d>�]| { <l>left|<r>right } }"];
-p0x55dba05ff960[label = "{ <par>parent = 0x55dba05ff930 | <ptr>ptr = 0x55dba05ff960 | <d>имеет хвост| { <l>left|<r>right } }"];
-p0x55dba05ff990[label = "{ <par>parent = 0x55dba05ff960 | <ptr>ptr = 0x55dba05ff990 | <d>слон| { <l>left|<r>right } }"];
-p0x55dba05ff9c0[label = "{ <par>parent = 0x55dba05ff960 | <ptr>ptr = 0x55dba05ff9c0 | <d>не слон| { <l>left|<r>right } }"];
-p0x55dba05ff9f0[label = "{ <par>parent = 0x55dba05ff930 | <ptr>ptr = 0x55dba05ff9f0 | <d>неизвестно кто| { <l>left|<r>right } }"];
+p0x503000000070[label = "{ <par>parent = (nil) | <ptr>ptr = 0x503000000070 | <d>животное| { <l>left|<r>right } }"];
+p0x5030000000a0[label = "{ <par>parent = 0x503000000070 | <ptr>ptr = 0x5030000000a0 | <d>имеет пенис| { <l>left|<r>right } }"];
+p0x5030000000d0[label = "{ <par>parent = 0x5030000000a0 | <ptr>ptr = 0x5030000000d0 | <d>слон| { <l>left|<r>right } }"];
+p0x503000000100[label = "{ <par>parent = 0x5030000000a0 | <ptr>ptr = 0x503000000100 | <d>слониха| { <l>left|<r>right } }"];
+p0x503000000130[label = "{ <par>parent = 0x503000000070 | <ptr>ptr = 0x503000000130 | <d>неизвестно кто| { <l>left|<r>right } }"];
 
-p0x55dba05ff930:<l> -> p0x55dba05ff960
-p0x55dba05ff960:<l> -> p0x55dba05ff990
-p0x55dba05ff960:<r> -> p0x55dba05ff9c0
-p0x55dba05ff930:<r> -> p0x55dba05ff9f0
+p0x503000000070:<l> -> p0x5030000000a0
+p0x5030000000a0:<l> -> p0x5030000000d0
+p0x5030000000a0:<r> -> p0x503000000100
+p0x503000000070:<r> -> p0x503000000130
 }
