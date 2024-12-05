@@ -3,7 +3,7 @@ FLAGS = -D _DEBUG -ggdb3 -std=c++17 -O0 -Wall -Wextra -Weffc++ -Waggressive-loop
 all: built run
 
 built:
-	g++ -I./Akinator/include -I./Common -I./Stack/include -I./Custom-warning ./Akinator/src/*.cpp ./Common/Common.cpp ./Stack/src/Stack.cpp ./Stack/src/MyAllocation.cpp ${FLAGS} -o main
+	g++ -I./Akinator/include -I./Common -I./Stack/include -I./Stack/My-Allocation -I./Custom-warning ./Akinator/src/*.cpp ./Common/Common.cpp ./Stack/src/Stack.cpp ./Stack/My-Allocation/*.cpp ${FLAGS} -o main
 
 run:
 	./main
