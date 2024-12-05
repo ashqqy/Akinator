@@ -1,8 +1,10 @@
 #include <stdlib.h>
 #include <assert.h>
 #include <stdio.h>
+#include <string.h>
 
 #include "Common.h"
+#include "CustomWarning.h"
 #include "Tree.h"
 
 //------------------------------------------------------
@@ -42,6 +44,27 @@ tree_node_t* NodeEditData (tree_node_t* node, tree_elem_t new_data)
     node->data = new_data;
 
     return node;
+}
+
+//------------------------------------------------------
+
+tree_node_t* NodeSearch (tree_node_t* node, const char* data)
+{
+    CustomWarning (data != NULL, NULL);
+
+    if (node == NULL)
+        return node;
+
+    if (strcmp(node->data, data) == 0)
+        return node;
+
+    tree_node_t* founded_node = NULL;
+    founded_node = NodeSearch (node->left, data);
+    if (founded_node != NULL)
+        return founded_node;
+    founded_node = NodeSearch (node->right, data);
+
+    return founded_node;
 }
 
 //------------------------------------------------------
